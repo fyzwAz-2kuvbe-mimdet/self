@@ -6,6 +6,7 @@ import streamlit as st
 def init_state():
     defaults = {
         "current_step": 1,
+        "started": False,
         "completed_steps": [],
         "step_answers": {i: {} for i in range(1, 11)},
         "step_ai_responses": {i: [] for i in range(1, 11)},

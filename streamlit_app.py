@@ -47,7 +47,7 @@ def render_landing():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         if st.button("1주차 시작하기 →", type="primary", use_container_width=True):
-            st.session_state.current_step = 1
+            st.session_state.started = True
             st.rerun()
 
     st.markdown(
@@ -96,9 +96,7 @@ def main():
     current = st.session_state.current_step
     completed = st.session_state.completed_steps
 
-    is_landing = current == 1 and 1 not in completed and not any(
-        st.session_state.step_answers[1].values()
-    )
+    is_landing = not st.session_state.started
 
     if is_landing:
         render_landing()
