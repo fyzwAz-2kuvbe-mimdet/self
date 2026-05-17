@@ -19,6 +19,7 @@ st.set_page_config(
 inject_css()
 init_state()
 
+
 STEP_MODULES = {
     1: "steps.step01_week1",
     2: "steps.step02_week2",
